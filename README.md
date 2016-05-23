@@ -20,17 +20,17 @@ stats() zwraca po prostu char* z kompletnym opisem, sa tez gettery do statystyk.
 
 (przygotowalem to sobie wczesniej i juz mi sie nie chce tego takos przpisywac)
 
-	1        rational       2
-	   1                     2
-	      1               2
+	1          rational          2
+	   1                      2
+	      1                2
 	         1          2
 	            1    2
-	introvert 0 extrovert
+	introvert     0     extrovert
 	            4    3
 	         4         3
 	      4              3
 	   4                    3
-	4     emotional     3
+	4         emotional        3
 
 w zaleznosci od procentowych udzialów danych osobowosci przy przydielaniu statystyk  uwzgledniane sa predyspozycje:
 
@@ -60,9 +60,21 @@ podczas walki sa tez bonusy w zaleznosci od zlozenia osobowosci o najwiekszym ud
 
 Losowana jest jakas ilosc osób i umieszczana na polu odpowiedniej wielkosci a potem dla kazdego wybierana jest akcja ruchu lub przeszukiwań.
 
-Ekstrowertycy poruszaja sie w strone innych introwertycy unikaja innych, racjonalni zwracaja uwage na szanse na zwyciestwo itp.
+Z czasem pole sie zmniejsza (aktualnie po 100 kolejkach/turach/ruchach (wszystkich zyjacych) pole zaczyna sie zmniejszac o 2 co 10 kolejek) przebywanie poza polem zadaje obrazenia rowne 10% calego hp.
+
+Ekstrowertycy poruszaja sie w strone innych, introwertycy unikaja innych, racjonalni zwracaja uwage na szanse na zwyciestwo itp.
 i co jakis czas sa losowane punkty w ktorych mozna znalezc lepszy ekwipunek, ogolnie nikt nie ma zadnych przedmiotow, ale mozna ich szukac w kazdym miejscu.
 
 W wylosowanych punktach jest po prostu wieksza szansa na lepsze przedmioty, im ma sie gorsze przedmioty tym wieksza szansa na znalezienia ( 1 - item.lv / player.lv).
 
 Mozna by tez pozniej dodac przeciwnikow zwierzeta itp. zeby nie musieli sie bic ze soba zeby zwiekszac poziom.
+
+## To Do
+
+- wybieranie ruchu/kierunku
+- poszukiwanie lepszych broni/zbroi
+- napisalem o roznych rodajach magii ale to nie ma sensu jezeli nie ma status ailments dlatego teraz sa tylko 2: magiczny atak i leczenie
+- uogolnic funkcje attack() tzn. co sie da wlaczyc pod funkcje (jak np. power() ) i pozbyc sie przy okazji dlugiego podwojnego switch'a
+- unik i obrona sa za slabe
+- "4" za szybko ginie
+- to mialo byc tak ze mozna sobie wybrac aktywna postac i w konsoli beda sie wyswietlac jej wszystkie informacje (statystyki, walki itp.) (dlatego tez w attack() jest pointer do string'a = nullptr) ale potem zrobilem tak jak jest teraz (to mialo byc na chwile) ze kazdy ma swoj _log i w chwili smierci tworzony jest plik "[miejsce] [imie].txt" w folderze "log", zrobilem zeby ten folder zawsze sie tworzyl, ale potem to usunalem bo teraz jezeli sie nie chce tych plikow to wystarczy usunac folder "log"
